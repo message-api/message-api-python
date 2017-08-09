@@ -11,7 +11,7 @@ python:
 install:
 - pip install tox
 script:
-- tox
+- tox -E $TRAVIS_PYTHON_VERSION
 deploy:
   provider: pypi
   user: message-api
