@@ -1,0 +1,22 @@
+sudo: false
+dist: trusty
+language: python
+python:
+- '2.6'
+- '2.7'
+- '3.3'
+- '3.4'
+- '3.5'
+- '3.6'
+install:
+- pip install tox
+script:
+- tox
+deploy:
+  provider: pypi
+  user: message-api
+  password:
+    secure: W9Zx+m1ae4i804jOaw3EEiKzK4G56wHEPPThGBHtT+RNf/oYdUdDHMrsSzea3OE/1Xfb5aFBU62xPbKbo1cpcatw4kH1ocyQ46KM73m8KH3aT2acflioqgG60zewdk/qjWZRribguGciZmgbR4QnNeXPo04hdQKg2FbHRHvkWlpN1Vz0/5ComFT7t+obALI+7vM1XioHtYSdL/lHWMMqsVl/iOS67s5zSoZljo41Yg0cZK/T4ur3wP9dg0cHIAlGysAU2JmConv7cBn+3I13DJ8Yv1+zaryXvzU9jrGEvBYnpAHKd1aVFzHtY+YduOZJ/hDUt7W/gBS6ehYOr7Q4wf4c1isN/bMrkZWqBh5jek6yDh42z1wsXD0PcpVx3m7jDWATfJbO9VyFH/HsDR9ppEj8ORG+opkUzd1itWtnhp0HpULR6PHFx5OlFNLEeN73Ajl0VtYwqbXM2yGgEOmNMxQ0ZNmcGcGh/xLZ5tPrYY8WqaPsM3khsjLuvEBfRyI1Do1yJlVCpIiAgg5POItTD6i8oB9Nj1dAJOEmNBR0uglJUZsuNGxGe8srd8xdAegAjiA45mHMZyWvlyDYFHEj9jZyW6/pNwv+LOYb0brS1CmCsdoa0z5UoXFeoVDzu5aw3yg5wQcRLta+ptT/nj3SPg63UVxORIMWCsr7cfVrBK8=
+  on:
+    branch: master
+    tags: true

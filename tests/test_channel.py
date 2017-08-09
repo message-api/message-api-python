@@ -1,4 +1,10 @@
-from unittest import TestCase, mock
+import sys
+
+if sys.version_info[0] == 2:
+    import mock
+else:
+    from unittest import mock
+from unittest import TestCase
 from uuid import uuid4
 
 from message_api.channel import MessageApi
