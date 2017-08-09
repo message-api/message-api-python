@@ -11,7 +11,7 @@ python:
 install:
 - pip install tox
 script:
-- tox -E $TRAVIS_PYTHON_VERSION
+- tox -e `echo "import sys; sys.stdout.write('py' + str(sys.version_info[0]) + str(sys.version_info[1]))" | python`
 deploy:
   provider: pypi
   user: message-api
