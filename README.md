@@ -7,5 +7,5 @@ channel.setup("<project_id>", "<api_key>")
 
 token = channel.create_channel("channel_1")
 
-chennl.send_message("channel_1", "message")
+channel.send_message("channel_1", "message")
 ```
