@@ -67,3 +67,11 @@ class TestChannelCreate(TestCase):
             json=body
         )
 
+    @vcr.use_cassette('tests/vcr/test_send_message.yaml', record_mode="once")
+    def test_send_message_vcr(self):
+        client_id = "test-channel"
+        message_api = MessageApi(
+            project_id="test",
+            api_key="1234"
+        )
+        result = message_api.send_message("test-channel", "test-message")
