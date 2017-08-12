@@ -27,30 +27,28 @@ def send_message(*args, **kwargs):
     _default_api().send_message(*args, **kwargs)
 
 class MessageApi(object):
-    def __init__(self, project_id=None, api_key=None):
+    def __init__(self, project_id=None, api_key=None, api_url="https://message-api.com/api/v1"):
         self.project_id = project_id
         self.api_key = api_key
+        self.api_url = api_url
 
     def create_channel(self, client_id, duration_minutes=None):
-        params = {
-            "project_id": self.project_id
-        }
         body = {
             "channel_id": client_id
         }
-        response = self._send_request("post", params=params, json=body)
+        url = self.api_url + "/projects/" + self.project_id + "/create_channel"
+        response = self._send_request("post", url, json=body)
         return response["token"]
 
 
     def send_message(self, client_id, message):
-        params = {
-            "project_id": self.project_id
-        }
+
         body = {
             "channel_id": client_id,
             "message": message
         }
-        response = self._send_request("post", params=params, json=body)
+        url = self.api_url + "/projects/" + self.project_id + "/send_message"
+        response = self._send_request("post", url, json=body)
         return None
 
     def _send_request(self, method, *args, **kwargs):
