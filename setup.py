@@ -7,7 +7,7 @@ with open(version_file) as version_file_handle:
     version = version_file_handle.read()
 
 setup(
-    name = "message_api",
+    name = "message-api",
     version = version,
     description = "Message API",
     packages = ["message_api"],
