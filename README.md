@@ -1,5 +1,8 @@
 # message-api-python
 
+[![Build Status](https://travis-ci.org/message-api/message-api-python.svg?branch=master)](https://travis-ci.org/message-api/message-api-python)  
+
+
 ```python
 from message_api import channel
 
